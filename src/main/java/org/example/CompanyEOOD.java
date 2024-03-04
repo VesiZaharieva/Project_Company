@@ -1,19 +1,19 @@
 package org.example;
 
-public class CompanyEOOD (int annualExpenses, int ownerProperty) extends CompanyET (String companyName, String dateCreation, String bulstat, String ownerName, {
+public class CompanyEOOD extends CompanyET {
+
     public CompanyEOOD(String companyName, String dateCreation, String bulstat, String ownerName, int startingCapital, int currentCapital, int annualIncome) {
         super(companyName, dateCreation, bulstat, ownerName, startingCapital, currentCapital, annualIncome);
     }
-}
 private int annualExpenses;
 private int ownerProperty;
 
     private void setAnnualExpenses(int annualExpenses) {
-        if (CompanyEOOD.this.companyName != null) {
-            if (CompanyEOOD.this.dateCreation != null) {
-                if (CompanyEOOD.this.bulstat != null) {
-                    if (CompanyEOOD.this.ownerName != null) {
-                        if (CompanyEOOD.this.startingCapital > 0) {
+        if (this.companyName != null) {
+            if (this.dateCreation != null) {
+                if (this.bulstat != null) {
+                    if (this.ownerName != null) {
+                        if (this.startingCapital > 0) {
                             this.annualExpenses = annualExpenses;
                         }
                     }
