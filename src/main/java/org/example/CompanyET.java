@@ -1,10 +1,10 @@
 package org.example;
 
 public class CompanyET extends Company {
-    public String ownerName;
-    public int startingCapital;
-    public int currentCapital;
-    public int annualIncome;
+    private String ownerName;
+    private int startingCapital;
+    private int currentCapital;
+    private int annualIncome;
     private double legalExpense = 0.10;
 
     public CompanyET(String companyName, String dateCreation, String bulstat, String ownerName, int startingCapital,

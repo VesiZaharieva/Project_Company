@@ -2,45 +2,18 @@ package org.example;
 
 public class Main {
     public static void main(String[] args) {
-       Company alfa = new CompanyET("ET Alfa", "10.04.2023", "BG12345678", "John Smith", 2000, 7000, 10000);
-        if (alfa.companyName != null) {
-            if (alfa.dateCreation != null) {
-                if (alfa.bulstat != null) {
-                    if (((CompanyET) alfa).startingCapital > 0) {
-                        System.out.println("The profit of " + alfa.getCompanyName() + " is " + alfa.calculateProfit());
-                        System.out.println("The capital increase of " + alfa.getCompanyName() + " is " + alfa.calculateCapitalIncrease());
-                    }
-                }
-            }
-        }
+        Company alfa = new CompanyET("", "10.04.2023", "BG12345678", "John Smith", 2000, 7000, 10000);
+        System.out.println("The profit of " + alfa.getCompanyName() + " is " + alfa.calculateProfit());
+        System.out.println("The capital increase of " + alfa.getCompanyName() + " is " + alfa.calculateCapitalIncrease());
+
+
         Company beta = new CompanyET("ET Beta", "01.01.2000", "BG11112223", "Anna Ride", 1000, 15000, 50000);
-        if (beta.companyName != null) {
-            if (beta.dateCreation != null) {
-                if (beta.bulstat != null) {
-                    if (((CompanyET) beta).startingCapital > 0) {
-                        System.out.println("The profit of " + beta.getCompanyName() + " is " + beta.calculateProfit());
-                        System.out.println("The capital increase of " + beta.getCompanyName() + " is " + beta.calculateCapitalIncrease());
-                    }
-                }
-            }
-        }
+        System.out.println("The profit of " + beta.getCompanyName() + " is " + beta.calculateProfit());
+        System.out.println("The capital increase of " + beta.getCompanyName() + " is " + beta.calculateCapitalIncrease());
+
+
+        Company gamma = new CompanyEOOD("Gamma EOOD", "01.01.2000", "BG12345678", "Marry Poppins", 3000, 5000, 40000, 11000, 500);
+        System.out.println("The profit of " + gamma.getCompanyName() + " is " + gamma.calculateProfit());
+        System.out.println("The capital increase of " + gamma.getCompanyName() + " is " + gamma.calculateCapitalIncrease());
     }
-
-    Company gamma = new CompanyEOOD("Gamma EOOD", "01.01.2000", "BG12345678", "Marry Poppins", 3000, 5000, 40000, 11000, 500);
-    if (gamma.companyName) {
-        if (((CompanyEOOD)gamma).dateCreation != null) {
-            if (((CompanyEOOD)gamma).bulstat != null) {
-                if (((CompanyEOOD)gamma).startingCapital > 0) {
-                    System.out.println("The profit of " + gamma.getCompanyName() + " is " + gamma.calculateProfit());
-                    System.out.println("The capital increase of " + gamma.getCompanyName() + " is " + gamma.calculateCapitalIncrease());
-                }
-            }
-        }
-    }
-
-
-
-
-
-
-    }
+}
