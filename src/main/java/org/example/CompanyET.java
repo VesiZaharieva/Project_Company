@@ -17,10 +17,10 @@ public class CompanyET extends Company {
     }
 
     void setOwnerName(String ownerName) {
-        if (this.companyName != null) {
-            if (this.dateCreation != null) {
-                if (this.bulstat != null) {
-                    if (ownerName == "") {
+        if (!this.getCompanyName().equals(null)) {
+            if (!this.getDateCreation().equals(null)) {
+                if (!this.getBulstat().equals(null)) {
+                    if (ownerName.equals("")) {
                         System.out.println("Incorrect owner name. Company would not be saved.");
                     } else {
                         this.ownerName = ownerName;
@@ -31,15 +31,15 @@ public class CompanyET extends Company {
     }
 
     private void setStartingCapital(int startingCapital) {
-        if (this.companyName != null) {
-            if (this.dateCreation != null) {
-                if (this.bulstat != null) {
-                    if (ownerName != null) {
+        if (!this.getCompanyName().equals(null)) {
+            if (!this.getDateCreation().equals(null)) {
+                if (!this.getBulstat().equals(null)) {
+                    if (this.ownerName.equals(null)) {
                         if (startingCapital > 0) {
                             this.startingCapital = startingCapital;
                         } else {
                             System.out.println("Incorrect starting capital. Company would not be saved.");
-                            }
+                        }
                     }
                 }
             }
@@ -47,10 +47,10 @@ public class CompanyET extends Company {
     }
 
     private void setCurrentCapital(int currentCapital) {
-        if (this.companyName != null) {
-            if (this.dateCreation != null) {
-                if (this.bulstat != null) {
-                    if (this.ownerName != null) {
+        if (!this.getCompanyName().equals(null)) {
+            if (!this.getDateCreation().equals(null)) {
+                if (!this.getBulstat().equals(null)) {
+                    if (!this.ownerName.equals(null)) {
                         if (this.startingCapital > 0) {
                             this.currentCapital = currentCapital;
                         }
@@ -61,10 +61,10 @@ public class CompanyET extends Company {
     }
 
     void setAnnualIncome(int annualIncome) {
-        if (this.companyName != null) {
-            if (this.dateCreation != null) {
-                if (this.bulstat != null) {
-                    if (this.ownerName != null) {
+        if (!getCompanyName().equals(null)) {
+            if (!getDateCreation().equals(null)) {
+                if (!getBulstat().equals(null)) {
+                    if (!this.ownerName.equals(null)) {
                         if (this.startingCapital > 0) {
                             this.annualIncome = annualIncome;
                         }
@@ -92,27 +92,18 @@ public class CompanyET extends Company {
 
     @Override
     public double calculateCapitalIncrease() {
-        if (this.companyName == null) {
-            if (this.dateCreation == null) {
-                if (this.bulstat == null) {
-                    if (ownerName == null) {
-                        if (this.startingCapital <= 0) {
-                            return 0.00;
-                                }
-                            }
-                        }
-                    }
-                }
-
-        return currentCapital - startingCapital;
-    }
-
-    @Override
-    public double calculateProfit() {
-        if (this.companyName == null) {
-            if (this.dateCreation == null) {
-                if (this.bulstat == null) {
-                    if (this.ownerName == null) {
+        if (getCompanyName().equals(null)) {
+            return 0.00;
+        } else {
+            if (this.getDateCreation().equals(null)) {
+                return 0.00;
+            } else {
+                if (this.getBulstat().equals(null)) {
+                    return 0.00;
+                } else {
+                    if (this.ownerName.equals(null)) {
+                        return 0.00;
+                    } else {
                         if (this.startingCapital <= 0) {
                             return 0.00;
                         }
@@ -120,7 +111,24 @@ public class CompanyET extends Company {
                 }
             }
         }
-        return annualIncome * (1 -  legalExpense );
+
+        return currentCapital - startingCapital;
+    }
+
+    @Override
+    public double calculateProfit() {
+        if (getCompanyName().equals(null)) { return 0.00;} else {
+            if (getDateCreation().equals(null)) { return 0.00; } else {
+                if (getBulstat().equals(null)) { return 0.00;} else {
+                    if (this.ownerName.equals(null)) { return 0.00;} else {
+                        if (this.startingCapital <= 0) {
+                            return 0.00;
+                        }
+                    }
+                }
+            }
+        }
+        return annualIncome * (1 - legalExpense);
     }
 }
 

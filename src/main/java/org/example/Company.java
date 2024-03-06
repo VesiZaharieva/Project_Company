@@ -1,10 +1,9 @@
 package org.example;
 
 public abstract class Company implements companyPerformance {
-    public String companyName;
-    public String dateCreation;
-    public String bulstat;
-    public int startingCapital;
+    private String companyName;
+    private String dateCreation;
+    private String bulstat;
 
     public Company(String companyName, String dateCreation, String bulstat) {
         setCompanyName(companyName);
@@ -15,7 +14,7 @@ public abstract class Company implements companyPerformance {
 
 
     public void setCompanyName(String companyName) {
-        if (companyName == "") {
+        if (companyName.equals("")) {
             System.out.println("Incorrect company name. Company would not be saved.");
             } else {
             this.companyName = companyName;
@@ -23,8 +22,8 @@ public abstract class Company implements companyPerformance {
     }
 
     public void setDateCreation(String dateCreation) {
-        if (this.companyName != null) {
-            if (dateCreation == "") {
+        if (!companyName.equals("")) {
+            if (dateCreation.equals("")) {
                 System.out.println("Incorrect date of creation. Company would not be saved.");
                 } else {
                 this.dateCreation = dateCreation;
@@ -32,9 +31,9 @@ public abstract class Company implements companyPerformance {
         }}
 
         public void setBulstat (String bulstat) {
-            if (this.companyName != null) {
-                if (this.dateCreation != null) {
-                    if (bulstat == "") {
+            if (!companyName.equals(null)) {
+                if (!dateCreation.equals(null)) {
+                    if (bulstat.equals("")) {
                         System.out.println("Incorrect Bulstat. Company would not be saved.");
                         } else {
                         this.bulstat = bulstat;
