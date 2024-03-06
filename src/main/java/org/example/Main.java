@@ -2,7 +2,7 @@ package org.example;
 
 public class Main {
     public static void main(String[] args) {
-        Company alfa = new CompanyET("", "10.04.2023", "BG12345678", "John Smith", 2000, 7000, 10000);
+        Company alfa = new CompanyET("", "", "BG12345678", "John Smith", 2000, 7000, 10000);
         System.out.println("The profit of " + alfa.getCompanyName() + " is " + alfa.calculateProfit());
         System.out.println("The capital increase of " + alfa.getCompanyName() + " is " + alfa.calculateCapitalIncrease());
 
